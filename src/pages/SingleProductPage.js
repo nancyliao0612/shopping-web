@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
-import { useProductsContext } from '../context/products_context'
-import { single_product_url as url } from '../utils/constants'
-import { formatPrice } from '../utils/helpers'
+import React, { useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { useProductsContext } from "../context/products_context";
+import { single_product_url as url } from "../utils/constants";
+import { formatPrice } from "../utils/helpers";
 import {
   Loading,
   Error,
@@ -10,13 +10,48 @@ import {
   AddToCart,
   Stars,
   PageHero,
-} from '../components'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+} from "../components";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
-  return <h4>single product page</h4>
-}
+  const {
+    fetchSingleProduct,
+    single_product,
+    single_product_loading: loading,
+    single_product_error: error,
+  } = useProductsContext();
+  const { productId } = useParams();
+  const history = useHistory();
+
+  // fetch single product
+  useEffect(() => {
+    fetchSingleProduct(`${url}${productId}`);
+  }, [productId]);
+
+  // navigate users to home page if there was an error
+  useEffect(() => {
+    // by default, error would be false
+    console.log(error);
+    if (error) {
+      setTimeout(() => {
+        history.push("/");
+      }, 3000);
+    }
+  }, [error]);
+
+  // setup loading
+  if (loading) {
+    return <Loading />;
+  }
+  // setup error
+
+  if (error) {
+    return <Error />;
+  }
+
+  return <h4>single product page</h4>;
+};
 
 const Wrapper = styled.main`
   .product-center {
@@ -50,6 +85,6 @@ const Wrapper = styled.main`
       font-size: 1.25rem;
     }
   }
-`
+`;
 
-export default SingleProductPage
+export default SingleProductPage;
