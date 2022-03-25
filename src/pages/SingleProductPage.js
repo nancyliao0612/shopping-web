@@ -32,7 +32,6 @@ const SingleProductPage = () => {
   // navigate users to home page if there was an error
   useEffect(() => {
     // by default, error would be false
-    console.log(error);
     if (error) {
       setTimeout(() => {
         history.push("/");
@@ -50,7 +49,54 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  return <h4>single product page</h4>;
+  console.log(single_product);
+
+  const {
+    name,
+    price,
+    id: sku,
+    company,
+    description,
+    colors,
+    stars,
+    images,
+    stock,
+    reviews,
+  } = single_product;
+
+  return (
+    <Wrapper>
+      <PageHero title={name} id={sku} />
+      <div className="section section-center page">
+        <Link to="/products" className="btn">
+          back to products
+        </Link>
+        <div className="product-center">
+          <ProductImages images={images} />
+          <section className="content">
+            <h2>{name}</h2>
+            <Stars stars={stars} reviews={reviews} />
+            <h5 className="price">{formatPrice(price)}</h5>
+            <p className="desc">{description}</p>
+            <p className="info">
+              <span>Available :</span>
+              {stock > 0 ? "In stock" : "Out of stock"}
+            </p>
+            <p className="info">
+              <span>SKU :</span>
+              {sku}
+            </p>
+            <p className="info">
+              <span>Brand :</span>
+              {company}
+            </p>
+            <hr />
+            {stock > 0 && <AddToCart product={single_product} />}
+          </section>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.main`

@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 const PageHero = (props) => {
   return (
     <Wrapper>
-      <div class="section-center">
+      <div className="section-center">
         <h3>
-          <Link to="/">Home</Link>/ {props.title}
+          <Link to="/">Home</Link>{" "}
+          {props.id ? (
+            <span>
+              <Link to="/products"> / Products</Link> / {props.title}
+            </span>
+          ) : (
+            <span>/ {props.title}</span>
+          )}
         </h3>
       </div>
     </Wrapper>
