@@ -1,6 +1,7 @@
 import React from "react";
 // import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
-import { IoCartOutline, IoPersonAddOutline } from "react-icons/io5";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsPersonPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
@@ -15,13 +16,13 @@ const CartButtons = () => {
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
-          <IoCartOutline />
+          <AiOutlineShoppingCart />
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
       <button className="auth-btn" type="button">
         Login
-        <IoPersonAddOutline />
+        <BsPersonPlus />
       </button>
     </Wrapper>
   );
