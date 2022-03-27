@@ -102,9 +102,9 @@ const filter_reducer = (state, action) => {
     }
     // colors (color is an array)
     if (color !== "all") {
-      tempProducts = tempProducts.filter((product) =>
-        // product.colors.includes(color)
-        product.colors.find((c) => c === color)
+      tempProducts = tempProducts.filter(
+        (product) => product.colors.includes(color)
+        // product.colors.find((c) => c === color)
       );
     }
     // price filter
