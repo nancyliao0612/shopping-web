@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
-import { FaTimes } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
@@ -19,7 +19,7 @@ const Sidebar = () => {
         <div className="sidebar-header">
           <img src={logo} alt="logo" className="logo" />
           <button className="close-btn" onClick={closeSidebar}>
-            <FaTimes />
+            <IoClose />
           </button>
         </div>
         <ul className="links">
@@ -51,7 +51,7 @@ const SidebarContainer = styled.div`
     padding: 1rem 1.5rem;
   }
   .close-btn {
-    font-size: 2rem;
+    font-size: 2.2rem;
     background: transparent;
     border-color: transparent;
     color: var(--clr-primary-5);

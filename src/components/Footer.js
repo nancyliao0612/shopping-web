@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <Wrapper>
       <h5>
-        © {new Date().getFullYear()} <span>ComfySloth</span> All rights reserved
+        © {new Date().getFullYear()} <span>Mebel Furniture</span> All rights
+        reserved
       </h5>
     </Wrapper>
   );

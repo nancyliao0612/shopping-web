@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
-import { FaBars } from "react-icons/fa";
+import { GrMenu } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
@@ -19,7 +19,7 @@ const Nav = () => {
             <img src={logo} alt="logo" />
           </Link>
           <button className="nav-toggle" onClick={openSidebar}>
-            <FaBars />
+            <GrMenu />
           </button>
         </div>
         <ul className="nav-links">
@@ -54,8 +54,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
-      width: 175px;
-      margin-left: -15px;
+      width: 155px;
     }
   }
   .nav-toggle {
@@ -64,7 +63,7 @@ const NavContainer = styled.nav`
     color: var(--clr-primary-5);
     cursor: pointer;
     svg {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
   .nav-links {

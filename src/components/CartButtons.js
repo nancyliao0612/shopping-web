@@ -1,5 +1,6 @@
 import React from "react";
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+// import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { IoCartOutline, IoPersonAddOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
@@ -14,13 +15,13 @@ const CartButtons = () => {
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
-          <FaShoppingCart />
+          <IoCartOutline />
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
       <button className="auth-btn" type="button">
         Login
-        <FaUserPlus />
+        <IoPersonAddOutline />
       </button>
     </Wrapper>
   );
@@ -34,11 +35,10 @@ const Wrapper = styled.div`
 
   .cart-btn {
     color: var(--clr-grey-1);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
-
     align-items: center;
   }
   .cart-container {
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     align-items: center;
     position: relative;
     svg {
-      height: 1.6rem;
+      height: 2rem;
       margin-left: 5px;
     }
   }
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
     align-items: center;
     background: transparent;
     border-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
