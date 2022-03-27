@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
-import { IoClose } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
 import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
@@ -19,7 +19,7 @@ const Sidebar = () => {
         <div className="sidebar-header">
           <img src={logo} alt="logo" className="logo" />
           <button className="close-btn" onClick={closeSidebar}>
-            <IoClose />
+            <AiOutlineClose />
           </button>
         </div>
         <ul className="links">
