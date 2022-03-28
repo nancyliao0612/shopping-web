@@ -6,7 +6,7 @@ const PageHero = (props) => {
     <Wrapper>
       <div className="section-center">
         <h3>
-          <Link to="/">Home</Link>{" "}
+          <Link to="/">Home</Link>
           {props.id ? (
             <span>
               <Link to="/products"> / Products</Link> / {props.title}
@@ -26,6 +26,10 @@ const Wrapper = styled.section`
   min-height: 20vh;
   display: flex;
   align-items: center;
+
+  h3 {
+    font-size: 1.5rem;
+  }
 
   color: var(--clr-primary-1);
   a {

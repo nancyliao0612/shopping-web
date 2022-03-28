@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 import { useProductsContext } from "../context/products_context";
-import { useUserContext } from "../context/user_context";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
@@ -54,7 +53,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
-      width: 155px;
+      width: 140px;
     }
   }
   .nav-toggle {
@@ -63,7 +62,7 @@ const NavContainer = styled.nav`
     color: var(--clr-primary-5);
     cursor: pointer;
     svg {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
   }
   .nav-links {
@@ -99,7 +98,7 @@ const NavContainer = styled.nav`
       }
     }
     .cart-btn-wrapper {
-      display: grid;
+      display: block;
     }
   }
 `;

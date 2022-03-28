@@ -34,6 +34,11 @@ const Wrapper = styled.section`
   min-height: 60vh;
   display: grid;
   place-items: center;
+
+  h1 {
+    line-height: 1.3;
+  }
+
   .img-container {
     display: none;
   }
@@ -48,7 +53,7 @@ const Wrapper = styled.section`
   @media (min-width: 992px) {
     height: calc(100vh - 5rem);
     grid-template-columns: 1fr 1fr;
-    gap: 8rem;
+    gap: 15rem;
     h1 {
       margin-bottom: 2rem;
     }

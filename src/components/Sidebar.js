@@ -6,7 +6,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
-import { useUserContext } from "../context/user_context";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
@@ -51,7 +50,7 @@ const SidebarContainer = styled.div`
     padding: 1rem 1.5rem;
   }
   .close-btn {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     background: transparent;
     border-color: transparent;
     color: var(--clr-primary-5);
@@ -104,7 +103,7 @@ const SidebarContainer = styled.div`
     z-index: 999;
   }
   .cart-btn-wrapper {
-    margin: 2rem auto;
+    margin: 2rem 1.4rem;
   }
   @media screen and (min-width: 992px) {
     .sidebar {
